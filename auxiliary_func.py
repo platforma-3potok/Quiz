@@ -7,4 +7,4 @@ def random_order(start: int = 1, end: int = 10, count: int = 10):
         raise ValueError('id последнего вопроса должен быть число')
     if not isinstance(count, int):
         raise ValueError('Кол-во вопросов должно быть числом')    
-    return random.sample(range(start, end+1), count)
+    return random.sample(range(start, end), count)
