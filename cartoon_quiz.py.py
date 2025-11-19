@@ -18,7 +18,7 @@ def Quiz(quest: list, first_order: int = 0, last_order: int = 10, count_quest: i
         count_options = len(current_quest['options'])
         correct_answer = current_quest["correct_answer"]
         explanation = current_quest["explanation"]
-
+        possible_answers = ['1', '2', '3', '4']
         print(f'\n{current_quest['question']}\n')
 
  
@@ -26,6 +26,10 @@ def Quiz(quest: list, first_order: int = 0, last_order: int = 10, count_quest: i
             print(f"{j+1} - {current_quest["options"][j]}\n")
         
         user_answer = input('Введите номер ответа: ')
+        
+        while user_answer not in possible_answers:
+            print('Введите пожалуйста корректный ответ')
+            user_answer = input('Введите номер ответа: ')
 
         if user_answer == correct_answer:
             score += 1
